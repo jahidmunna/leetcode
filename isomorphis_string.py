@@ -17,35 +17,7 @@
 
 from genericpath import exists
 from typing import List
-
-# class Solution:        
-#     def isIsomorphic(self, s: str, t: str) -> bool:
-#         # if does not matched with length means they are mapping with different/multiple characters
-#         if len(s)!=len(t):
-#             return False
-        
-#         char_map = dict() 
-        
             
-#         for c1, c2 in zip(s,t):
-#             print(c1, c2, char_map, sep="\t")
-#             if c1 in char_map and c2 in char_map:
-#                 if c2 !=char_map[c1] or c1 != char_map[c2]:
-#                     print(f"does not matched with: {c1}: {char_map[c1]}\t{c2}: {char_map[c2]}")
-#                     return False
-#             elif c1 not in char_map and c2 not in char_map:
-#                 print("Not exit")
-#                 char_map[c1] = c2
-#                 char_map[c2] = c1
-#             elif c1 in char_map and c2 not in char_map:
-#                 print(f"{c1} exit {c2} not")
-#                 return False
-#             elif c2 in char_map and c1 not in char_map:
-#                 print(f"{c2} exit {c1} not")
-#                 return False
-            
-#         return True                
-
 class Solution:        
     def isIsomorphic(self, s: str, t: str) -> bool:
         # if does not matched with length means they are mapping with different/multiple characters
