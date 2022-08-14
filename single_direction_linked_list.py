@@ -10,9 +10,10 @@ class LinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
+        self.verbose = False
     
     def add(self, val):
-        print("Adding node with value {}".format(val))
+        if self.verbose: print("Adding node with value {}".format(val))
         node = ListNode(val)
         if not self.head:
             self.head = node
@@ -35,15 +36,36 @@ class LinkedList:
                 else:
                     node.val = node.next.val
                     node.next = node.next.next
-                print("Deleted node with value {}".format(val))
+                if self.verbose: print("Deleted node with value {}".format(val))
                 return
             prev = node
             node = node.next
         
-        print("node with value {} not found".format(val))
+        if self.verbose: print("node with value {} not found".format(val))
+        
+    def sort(self):
+        if self.head:
+            current = self.head
+             
+            while current.next:
+                
+                travel = current
+                min_node = travel
+                
+                while(travel):
+                    if travel.val < min_node.val:
+                        min_node = travel
+                    
+                    travel = travel.next
+                
+                current.val, min_node.val = min_node.val, current.val
+                    
+                current = current.next                                      
+                    
+
     
     def print(self):
-        print("Printing linked list")
+        if self.verbose: print("Printing linked list")
         node = self.head
         while node:
             print(node.val, end=' ')
@@ -56,13 +78,18 @@ if __name__ == '__main__':
     
     linked_list.add(5)
     linked_list.add(4)
-    linked_list.print()
-    linked_list.remove(4)
-    linked_list.remove(10)
-    linked_list.print()
+    # linked_list.print()
+    # linked_list.remove(4)
+    # linked_list.remove(10)
+    # linked_list.print()
     linked_list.add(2)
-    linked_list.add(10)
     linked_list.add(15)
+    linked_list.add(10)
+    linked_list.add(10)
+    print("before sorting")
+    linked_list.print()
+    print("Sorting linked list")
+    linked_list.sort()
     linked_list.print()
     
 
