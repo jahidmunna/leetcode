@@ -1,7 +1,3 @@
-from distutils.command.build import build
-import numbers
-
-
 class BinaryTree:
     def __init__(self, data) -> None:
         self.data = data
