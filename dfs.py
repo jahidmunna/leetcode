@@ -57,7 +57,7 @@ def apply_dfs(edges):
             graph[u]
 
     start = edges[0][0]
-    dfs(visited=[], node=5, graph=graph)
+    dfs(visited=[], node=start, graph=graph)
 
 
 edges = [
