@@ -57,4 +57,7 @@ class Solution:
         
 obj = Solution()
 result = obj.findOrder(numCourses = 4, prerequisites = [[1,0],[2,0],[3,1],[3,2]])
+# result = obj.findOrder(numCourses = 4, prerequisites = [[0,1],[1,2],[2,3],[3,0]])
 print(result)
+
+# Note: Also Used for Cycle Detection
