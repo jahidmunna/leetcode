@@ -19,13 +19,11 @@ class Solution:
         def isPalindrome(s):
             return s == s[::-1]
         
-        seen = set()
         indexes = defaultdict(list)
         max_langth = 1
         palindrome = s[0]
         for i, c in enumerate (s):
-            if c not in seen:
-                seen.add(c)
+            if c not in indexes:
                 indexes[c].append(i)
             else:
                 for idx in indexes[c]:
@@ -37,7 +35,7 @@ class Solution:
                             break
                 indexes[c].append(i)
         
-        del indexes, max_langth, seen
+        del indexes, max_langth
     
         return palindrome
 
