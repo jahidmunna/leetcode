@@ -19,10 +19,14 @@ from collections import Counter
 
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        count = dict(Counter(nums))
-        output = sorted(count.items(), key=lambda x: x[1])[0][0]
-        return output
-        
+        # count = dict(Counter(nums))
+        # output = sorted(count.items(), key=lambda x: x[1])[0][0]
+        # return output
+        # best approach XOR, O(n), S(1)
+        ans = 0 
+        for num in nums:
+            ans ^=num
+        return ans        
         
         
 
